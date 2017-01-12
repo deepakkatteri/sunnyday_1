@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+{% load staticfiles %}
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>SunnydaySolar</title>
+
+        <meta name="description" content="DESCRIPTION" />
+		<meta name="keywords" content="KEYWORDS" />
+		<meta name="author" content="Codeconvey" />
+
+		<link rel="shortcut icon" href="../favicon.ico">
+
+		<link rel="stylesheet" type="text/css" href="{% static "css/component.css" %}" />
+		<link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.min.css" %}"/>
+		<link href="{% static "font-awesome/css/font-awesome.min.css" %}" rel="stylesheet" type="text/css">
+		<link href="{% static "css/stylish-portfolio.css" %}" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	</head>
+	<body>
+
+			<!-- Top Navigation -->
+			<nav class="navbar navbar-custom">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav text-custom">
+      <li><a href="{% url 'mysite:investors' %}">Investor</a></li>
+      <li><a href="#">Job seeker</a></li>
+      <li><a href="#">Environmentalist</a></li>
+			<li><a href="#">Customer</a></li>
+    </ul>
+  </div>
+</nav>
+<header>
+		<div class="text-center text-custom">
+				<h1><span><img class="img-rounded" src="{% static "images/sunnyday.png" %}"></span>SUNNYDAY SOLAR</h1>
+				<h3>"one point solar solution"</h3>
+				<br>
+</header>
+
+<div class="container">
+	<div class="col-md-4 text-center">
+		<h1 class="text-color"><a href='#'>About</a></h1>
+		<p class="bottomtext">Founded on 2011 Sunnyday has since been committed
+			in the vision of developing solar resources in kerala
+			<br>our focus is to contribute to the solar infrastructure of kerala,
+			We have installed about 100MW throughout kerala in this short span
+		</p>
+	</div>
+	<div class="col-md-4 text-custom text-center">
+		<h1 class="text-color"><a href='#'>Products</a></h1>
+		<p>
+		<h4>Solar water Heaters</h4>
+		<h4>Solar Mini Plants</h4>
+		<h4>Solar Mega Plants</h4>
+	</p>
+	</div>
+	<div class="col-md-4 text-custom text-center">
+		<h1 class="text-color"><a href='#'>Services</a></h1>
+		<p>SD offers the consulting services for industries who want to extend their portfolio to the solar sectors as well as
+			investors who want to explore the field of renewable energy
+	</div>
+</div>
+
+
+
+            <video autoplay  poster="images/poster.jpg" id="videobg" loop>
+                <source src="{% static "images/video.mp4" %}" type="video/mp4">
+                <source src="{% static "images/video.wmv" %}" type="video/wmv">
+                Your browser does not support the video tag. I suggest you upgrade your browser.
+            </video>
+
+					</div>
+	</body>
+</html>

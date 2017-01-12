@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>SunnyDay</title>
+    {% load staticfiles %}
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/icon" href="{% static "images/favicon.png" %}"/>
+    <!-- Font Awesome -->
+    <link href="{% static "css/font-awesome.css" %}" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="{% static "css/bootstrap.css" %}" rel="stylesheet">
+    <!-- Slick slider -->
+    <link rel="stylesheet" type="text/css" href="{% static "css/slick.css" %}"/>
+    <!-- Animate css -->
+    <link rel="stylesheet" type="text/css" href="{% static "css/animate.css" %}"/>
+    <!-- Progress bar  -->
+    <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap-progressbar-3.3.4.css" %}"/>
+     <!-- Theme color -->
+    <link id="switcher" href="{% static "css/theme-color/orange-theme.css" %}" rel="stylesheet">
+
+    <!-- Main Style -->
+    <link href="{% static "css/style.css" %}" rel="stylesheet">
+
+    <!-- Fonts -->
+
+    <!-- Open Sans for body font -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <!-- Lato for Title -->
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+  <!-- BEGAIN PRELOADER -->
+  <div id="preloader">
+    <div id="status">&nbsp;</div>
+  </div>
+  <!-- END PRELOADER -->
+
+  <!-- SCROLL TOP BUTTON -->
+  <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
+  <!-- END SCROLL TOP BUTTON -->
+
+  <!-- Start header -->
+  <header id="header">
+    <!-- header bottom -->
+    <div class="header-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-6">
+            <div class="header-contact">
+              <ul>
+                <li>
+                  <div class="phone">
+                    <i class="fa fa-phone"></i>
+                    +919995008052
+                  </div>
+                </li>
+                <li>
+                  <div class="mail">
+                    <i class="fa fa-envelope"></i>
+                    mail@sunndaysolar.in
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-6">
+            <div class="header-login">
+              <a class="login modal-form" data-target="#login-form" data-toggle="modal" href="#">Quick Quote</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- End header -->
+
+  <!-- Start login modal window -->
+  <div aria-hidden="false" role="dialog" tabindex="-1" id="login-form" class="modal leread-modal fade in">
+    <div class="modal-dialog">
+      <!-- Start login section -->
+      <div id="login-content" class="modal-content">
+        <div class="modal-header">
+          <button aria-label="Close" data-dismiss="modal" class="close" type="button"><span aria-hidden="true">×</span></button>
+          <h4 class="modal-title"><i class="fa fa-unlock-alt"></i>Contact Us</h4>
+        </div>
+        <div class="modal-body">
+          <form method=post>
+            {% csrf_token %}
+            <div class="form-group">
+            {{form.Name}}
+            </div>
+            <div class="form-group">
+              {{form.PhoneNo}}
+            </div>
+            <div class="form-group">
+              {{form.Emailid}}
+            </div>
+             <div class="loginbox">
+              <button class="btn signin-btn" type="submit">Call me</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BEGIN MENU -->
+  <section id="menu-area">
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <!-- FOR MOBILE VIEW COLLAPSED BUTTON -->
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!-- LOGO -->
+          <!-- TEXT BASED LOGO -->
+          <a class="navbar-brand" href="{% url "mysite:index" %}">SunnyDay</a>
+          <!-- IMG BASED LOGO  -->
+        <!--   <a class="navbar-brand" href="index.html"><img src="{% static "images/logo.png" %}" alt="logo"></a> -->
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul id="top-menu" class="nav navbar-nav navbar-right main-nav">
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#service">Products and Services</a></li>
+            <li><a href="{% url "mysite:blog" %}">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+  </section>
+  <!-- END MENU -->
+
+  <!-- Start slider -->
+  <section id="slider">
+    <div class="main-slider">
+      <div class="single-slide">
+        <img src="{% static "images/slider-1.jpg" %}" alt="img">
+        <div class="slide-content">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 col-sm-6">
+                <div class="slide-article">
+                  <h1 class="wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s">First Professional solar Brand in Kerala</h1>
+                  <p class="wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.75s">All our products are Custom designed and will be tailored for your best Experience </p>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6">
+                <div class="slider-img wow fadeInUp">
+                  <img src="{% static "images/person1.jpg" %}" alt="business man">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="single-slide">
+        <img src="{% static "images/slider-3.jpg" %}" alt="img">
+        <div class="slide-content">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 col-sm-6">
+                <div class="slide-article">
+                  <h1 class="wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s">Committed to the Protection of Environment always</h1>
+                  <p class="wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.75s">Since founded we have been actively supporting several Environment projects in Kerala </p>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6">
+                <div class="slider-img wow fadeInUp">
+                  <img src="{% static "images/person2.jpg" %}" alt="business man">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End slider -->
+  <!-- Start about  -->
+  <section id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="title-area">
+            <h2 class="title">About us</h2>
+            <span class="line"></span>
+            <p>Founded in 2011 ,we are progressing with revolutionary Ideas in Renewable Energy Field since inception</p>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="about-content">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="our-skill">
+                  <h3>What Motivates Us?</h3>
+                  <div class="our-skill-content">
+                  <p>There Should be an addition to the basic amenities , food cloth and shelter which we believe is electricity
+                  it will be hard to believe there are still power deprived areas in our county.<br>
+                  The mother nature around is our provider for the 3 basic amenities and those are harnessed by common man without any
+                paricular obstacles . we in Sunnyday beleive that same is applicable with Electricity . Since it a Basic amenity why do we have to
+              Pay big corparations for the privilege when its offered to us free by Mother Nature</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="why-choose-us">
+                  <h3>Why Choose Us?</h3>
+                  <div class="panel-group why-choose-group" id="accordion">
+                    <div class="panel panel-default">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                            Custom Design<span class="fa fa-minus-square"></span>
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapseOne" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                         <p>Our Authority over the Renewable Field is Acheived Through Serious research in the Subject Over the Years. By that Experise
+                         We can Design your renewable utilities to the best </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="panel panel-default ">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                            Quality Standards<span class="fa fa-plus-square"></span>
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapseTwo" class="panel-collapse collapse">
+                        <div class="panel-body">
+                         <p>We understand the  Pulse of the quality obsessive Energy market and hence ensure the best quality is delivered always,
+                         All our Components have the Necessary certifications and are in accordence with IS standards </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                          Service and Support <span class="fa fa-plus-square"></span>
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapseThree" class="panel-collapse collapse">
+                        <div class="panel-body">
+                          <p>since the products are custom designed by our team we are always eager to attend any isssues related to the product . Our service
+                          team is happy to attend every one of your post installation issues</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end about -->
+
+  <!-- Start counter -->
+  <section id="counter">
+    <div class="counter-overlay">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="counter-area">
+              <div class="row">
+                <!-- Start single counter -->
+                <div class="col-md-3 col-sm-6">
+                  <div class="single-counter">
+                    <div class="counter-icon">
+                      <i class="fa fa-suitcase"></i>
+                    </div>
+                    <div class="counter-no counter">
+                      80
+                    </div>
+                    <div class="counter-label">
+                      Projects
+                    </div>
+                  </div>
+                </div>
+                <!-- End single counter -->
+                <!-- Start single counter -->
+                <div class="col-md-3 col-sm-6">
+                  <div class="single-counter">
+                    <div class="counter-icon">
+                      <i class="fa fa-clock-o"></i>
+                    </div>
+                    <div class="counter-no counter">
+                      800
+                    </div>
+                    <div class="counter-label">
+                      Hours Work
+                    </div>
+                  </div>
+                </div>
+                <!-- End single counter -->
+                <!-- Start single counter -->
+                <div class="col-md-3 col-sm-6">
+                 <div class="single-counter">
+                    <div class="counter-icon">
+                      <i class="fa fa-trophy"></i>
+                    </div>
+                    <div class="counter-no counter">
+                      215
+                    </div>
+                    <div class="counter-label">
+                      MW
+                    </div>
+                  </div>
+                </div>
+                <!-- End single counter -->
+                <!-- Start single counter -->
+                <div class="col-md-3 col-sm-6">
+                  <div class="single-counter">
+                    <div class="counter-icon">
+                      <i class="fa fa-users"></i>
+                    </div>
+                    <div class="counter-no counter">
+                    120
+                    </div>
+                    <div class="counter-label">
+                      Clients
+                    </div>
+                  </div>
+                </div>
+                <!-- End single counter -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End counter -->
+
+
+  <!-- Start Service -->
+  <section id="service">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="title-area">
+            <h2 class="title">Our Products and Services</h2>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="service-content">
+            <div class="row">
+              <!-- Start single service -->
+              <div class="col-md-4 col-sm-6">
+                <div class="single-service wow zoomIn">
+                  <i class="fa fa-certificate service-icon" aria-hidden="true"></i>
+                  <h4 class="service-title">Solar Water Heaters </h4>
+                  <p>A replacemnet of the conventioanl Geysers that can work more efficiently.<br>
+                  Models available are 100L,200L,500L </p>
+                </div>
+              </div>
+              <!-- End single service -->
+              <!-- Start single service -->
+              <div class="col-md-4 col-sm-6">
+                <div class="single-service wow zoomIn">
+                  <i class="fa fa-lightbulb-o service-icon"></i>
+                  <h4 class="service-title">SunnyDay Mini Plant</h4>
+                  <p>Solar Power as a Backup option. Install a miniplant and stop worrying about Load shedding</p>
+                </div>
+              </div>
+              <!-- End single service -->
+              <!-- Start single service -->
+              <div class="col-md-4 col-sm-6">
+                <div class="single-service wow zoomIn">
+                  <i class="fa fa-magic service-icon"></i>
+                  <h4 class="service-title">Solar Mega Plants</h4>
+                  <p>The complete Design, Installation and commissioning
+                   of Mega(5kW and above) solar installations </p>
+                </div>
+              </div>
+              <!-- End single service -->
+              <!-- Start single service -->
+              <div class="col-md-4 col-sm-6">
+              </div>
+              <!-- End single service -->
+              <!-- Start single service -->
+              <div class="col-md-4 col-sm-6">
+                <div class="single-service wow zoomIn">
+                  <i class="fa fa-mobile service-icon"></i>
+                  <h4 class="service-title">Consulting</h4>
+                  <p>We provide the solarprenuers and big corporations Technical advice on renewable energy installations</p>
+                </div>
+              </div>
+              <!-- End single service -->
+              <!-- Start single service -->
+              <div class="col-md-4 col-sm-6">
+              </div>
+              <!-- End single service -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Service -->
+
+  <!-- Start Pricing table -->
+  <!-- End Pricing table -->
+
+  <!-- Start Pricing table -->
+  <!-- End Pricing table -->
+
+  <!-- Start Testimonial section -->
+
+  <!-- Start latest news -->
+  <section id="latest-news">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="title-area">
+            <h2 class="title">Latest Blog</h2>
+            <span class="line"></span>
+            <p>Coming soon</p>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="latest-news-content">
+            <div class="row">
+              <!-- start single latest news -->
+              <div class="col-md-4">
+                <article class="blog-news-single">
+                  <div class="blog-news-img">
+                    <a href="blog-single-with-right-sidebar.html"><img src="{% static "images/blog-img-1.jpg" %}" alt="image"></a>
+                  </div>
+                  <div class="blog-news-title">
+                    <h2><a href="blog-single-with-right-sidebar.html">coming soon</a></h2>
+                    <p>By <a class="blog-author" href="#">unknown</a> <span class="blog-date">........</span></p>
+                  </div>
+                  <div class="blog-news-details">
+                    <p></p>
+                    <a class="blog-more-btn" href="blog-single-with-right-sidebar.html">Read More <i class="fa fa-long-arrow-right"></i></a>
+                  </div>
+                </article>
+              </div>
+              <!-- start single latest news -->
+              <div class="col-md-4">
+                <article class="blog-news-single">
+                  <div class="blog-news-img">
+                    <a href="blog-single-with-right-sidebar.html"><img src="{% static "images/blog-img-2.jpg" %}" alt="image"></a>
+                  </div>
+                  <div class="blog-news-title">
+                    <h2><a href="blog-single-with-right-sidebar.html">coming soon</a></h2>
+                    <p>By <a class="blog-author" href="#">unknown</a> <span class="blog-date"></span></p>
+                  </div>
+                  <div class="blog-news-details">
+                    <p></p>
+                    <a class="blog-more-btn" href="blog-single-with-right-sidebar.html"><i class="fa fa-long-arrow-right"></i></a>
+                  </div>
+                </article>
+              </div>
+              <!-- start single latest news -->
+              <div class="col-md-4">
+                <article class="blog-news-single">
+                  <div class="blog-news-img">
+                    <a href="blog-single-with-right-sidebar.html"><img src="{% static "images/blog-img-3.jpg" %}" alt="image"></a>
+                  </div>
+                  <div class="blog-news-title">
+                    <h2><a href="blog-single-with-right-sidebar.html">coming soon</a></h2>
+                    <p>By <a class="blog-author" href="#">unknown</a> <span class="blog-date">.......</span></p>
+                  </div>
+                  <div class="blog-news-details">
+                    <p></p>
+                    <a class="blog-more-btn" href="blog-single-with-right-sidebar.html"><i class="fa fa-long-arrow-right"></i></a>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End latest news -->
+
+  <!-- Start subscribe us -->
+  <section id="subscribe">
+    <div class="subscribe-overlay">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="subscribe-area">
+              <h2 class="wow fadeInUp">Subscribe Newsletter</h2>
+              <form action="" class="subscrib-form wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s">
+                <input type="text" placeholder="Enter Your E-mail..">
+                <button class="subscribe-btn" type="submit">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End subscribe us -->
+
+  <!-- Start footer -->
+  <footer id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-sm-6">
+          <div class="footer-left">
+            <p>Designed by  Sunnyday</a></p>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-6">
+          <div class="footer-right">
+            <a href="https://www.facebook.com/Sunnydayindia"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-google-plus"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="#"><i class="fa fa-pinterest"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- End footer -->
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <!-- Bootstrap -->
+  <script src="{% static "js/bootstrap.js" %}"></script>
+  <!-- Slick Slider -->
+  <script type="text/javascript" src="{% static "js/slick.js" %}"></script>
+  <!-- counter -->
+  <script src="{% static "js/waypoints.js" %}"></script>
+  <script src="{% static "js/jquery.counterup.js" %}"></script>
+  <!-- Wow animation -->
+  <script type="text/javascript" src="{% static "js/wow.js" %}"></script>
+  <!-- progress bar   -->
+  <script type="text/javascript" src="{% static "js/bootstrap-progressbar.js" %}"></script>
+
+
+  <!-- Custom js -->
+  <script type="text/javascript" src="{% static "js/custom.js" %}"></script>
+
+  </body>
+</html>

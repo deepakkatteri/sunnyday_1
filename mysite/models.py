@@ -1,8 +1,7 @@
 from __future__ import unicode_literals
-
 from django.db import models
 from datetime import datetime
-from django.contrib.auth import models as mod
+from django.contrib.auth.models import User,Permission
 
 
 # Create your models here.
@@ -60,6 +59,38 @@ class Order(models.Model):
     Emailid=models.TextField(max_length=50)
     def __str__(self):
             return self.PhoneNo
+
+class Category(models.Model):
+    class Meta:
+        permissions=(
+        ("sales_staff","sales staff"),
+        ("sales_man","sales manager"),
+        ("admin","administrator"),
+        ("design","desin_staff"),
+        ("tech","tech_manager"),
+        ("accountman","accounts_manager"),
+        ("accounts","accounts_staff"),
+        ("purchase","purchase_staff"),
+        ("purchaseman","purchase_manager"),
+        )
+
+class Pds(models.Model):
+    CustomerName=models.TextField(max_length=15)
+    DateofEnquiry=models.DateField(auto_now=True)
+    Address=models.TextField(max_length=50)
+    Phone=models.TextField(max_length=10)
+    Email=models.TextField(max_lenth=50)
+    EnquirySource=models.TextField(max_length=20)
+    DealerName=models.TextField(max_length=15,blank=True)
+    ReferencePerson=models.Text(max_length=10,blank=True)
+    Section=models.TextField(max_length=15,blank=True)
+    Choices={
+    (OFF-GRID,'OFF_GRID'),
+    (GRID-TIED,'GRID-TIED'),
+    (GRID-TIED_WITH_BACKUP,'GRID-TIED-WITH-BACKUP'),
+    (STREETLIGHT,'STREETLIGHT')
+    }
+
 
 
 

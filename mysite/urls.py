@@ -21,6 +21,7 @@ urlpatterns = [
     url(r'^$',views.index,name='index'),
     url(r'^blog/',views.Blog_view,name='blog'),
     url(r'^investor/',views.investor,name='investors'),
+    url(r'^login/',views.login,name='login')
     #url(r'^job_new',views.job_new,name='newjob'),
     #url(r'^downtime/machine/(?P<machine_id>[0-9]+)/$',views.machine_history,name='machine_details'),
     #url(r'^Daily_report_view',views.Daily_report_view,name='Dailyreportform'),
